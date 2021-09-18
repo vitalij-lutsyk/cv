@@ -60,9 +60,10 @@ a {
 }
 .main-wrapper {
   position: relative;
-  display: block;
   width: 100%;
-  padding: 5rem 0rem 0rem 28rem;
+  padding: 5rem 0rem 0rem 0;
+  display: flex;
+  flex-direction: row-reverse;
 }
 .header {
   width: 100%;
@@ -74,13 +75,10 @@ a {
   width: 100%;
 }
 .aside {
-  position: absolute;
-  top: 5rem;
-  left: 0rem;
   width: 25rem;
 }
 .header .avatar-container {
-  width: 25rem;
+  width: 22rem;
   margin-right: 15rem;
   display: flex;
   justify-content: center;
@@ -329,4 +327,47 @@ a {
   width: 0%;
   height: 100%;
   background: #212121;
+}
+
+@media screen and (max-width: 500px) {
+  .body--share .preview-box {
+    padding: 2rem;
+  }
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+  .header .avatar-container {
+    width: auto;
+    margin-right: 2rem;
+  }
+  .header .name {
+    font-size: 2rem;
+    text-align: left;
+  }
+  .main-wrapper {
+    padding: 2rem 0;
+    flex-direction: column;
+  }
+  .aside {
+    position: static;
+    width: auto;
+    margin: 0 auto;
+  }
+  .experience-group .group-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .experience-group .group-title {
+    padding-bottom: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .experience-group .experience-item:before {
+    left: 0.5rem;
+  }
+  .experience-group .group-title.active {
+    padding-bottom: 1.8rem;
+  }
 }

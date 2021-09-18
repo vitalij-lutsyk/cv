@@ -258,6 +258,21 @@
       </div>
     </div>
   </div>
+  <script>
+    const collapsibleItems = document.getElementsByClassName("group-title");
+    for (const item of Array.from(collapsibleItems)) {
+      item.addEventListener("click", function() {
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+    }
+  </script>
 </body>
 
 </html>
